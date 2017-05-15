@@ -24,8 +24,7 @@ int main(int argc, const char * argv[])
                                             (__bridge CFStringRef)([urlschemerefs objectAtIndex:0]));
             
             currentHandler = [[currentHandler componentsSeparatedByString:@"."] lastObject];
-            printf("Current: %s\n\n", [currentHandler cStringUsingEncoding:NSUTF8StringEncoding]);
-            printf("Use -set <browser> to set a new default HTTP handler\n");
+            printf("%s", [currentHandler cStringUsingEncoding:NSUTF8StringEncoding]);
         } else {
             // lets figure out which handlers are available
             NSArray *HTTPHandlers = (__bridge NSArray *) LSCopyAllHandlersForURLScheme(
